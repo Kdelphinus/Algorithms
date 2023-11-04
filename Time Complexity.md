@@ -36,8 +36,9 @@
 
 ![omega notation](./img/omega_notation.png)
 
-$ \Omega (g(n)) \; = \; \{ f(n): \; there\; exists \; positive \; constants\; c\; and\; n_0\; such\; that\; 0 \le cg(n)
-\le f(n) \; for\; all\; n \ge n_0} $
+```latex
+$ \Omega (g(n)) = \{f(n): $ there exists positive constants $c$ and $n_0$ such that $ 0 \le cg(n) \le f(n) $ for all $ n \ge n_0 \} $
+```
 
 ## Reference
 
