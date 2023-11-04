@@ -17,10 +17,10 @@
     - 최악의 경우를 나타낸다.
     - '어떤 입력이 주어지더라도 알고리즘의 수행시간이 얼마 이상 넘지 않는다' 라는 **상한(Upper Bound)** 의 의미
     - 보통 시간 복잡도는 최악의 경우로 나타낸다.
-- **Big-$\Omega$**
+- **Big- $\Omega$ **
     - 최선의 경우를 나타낸다.
     - 가장 빠른 수행 시간을 분석하여 최적의 알고리즘을 찾는데 활용한다.
-- **Big-$\Theta$**
+- **Big- $\Theta$ **
     - 평균의 경우를 나타낸다.
     - 입력의 확률 분포(일반적으로 균등 분포)를 가정하여 분석한다.
 
@@ -36,9 +36,9 @@
 
 ![omega notation](./img/omega_notation.png)
 
-```markdown
+```html
 $ \Omega (g(n)) \; = \; \{ f(n): \; there\; exists \; positive \; constants\; c\; and\; n_0\; such\; that\; 0 \le cg(n)
-\le f(n) \; for\; all\; n \ge n_0}$
+\le f(n) \; for\; all\; n \ge n_0} $
 ```
 
 ## Reference
