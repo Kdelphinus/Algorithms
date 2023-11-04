@@ -1,6 +1,6 @@
 # Sort
 
-# 0. 목차
+## Index
 
 1. [개요](#1-개요)
 2. [정렬과 이진 탐색](#2-정렬과-이진-탐색)
@@ -22,6 +22,9 @@
     3. [Tim sort](#tim-sort)
     4. [Tim sort의 기본 원리](#tim-sort의-기본-원리)
     5. [Tim sort의 최적화 기법](#tim-sort의-최적화-기법)
+7. [정렬 문제의 하한](#7-정렬-문제의-하한)
+
+- [Reference](#reference)
 
 
 # 1. 개요
@@ -371,8 +374,39 @@ run $B$의 크기가 더 작을 경우엔 반대로 진행하면 된다. $B$를 
 
 Tim sort는 병합 정렬을 기반으로 하되, 좀 더 효율적으로 run으로 나누고 제각기 다른 크기를 가진 run을 최대한 효율적인 방법으로 병합하여 실생활 데이터의 특성을 이용하여 여러 가지 최적화 기법을 도입한 정렬 알고리즘이다. 무작위 데이터에선 속도가 빠른 편은 아니지만 일정한 패턴이 있는 실생활의 데이터에 대해선 빠른 성능을 보여주고 안정적이며 최악의 경우에도 시간 복잡도가 $O(n \log n)$이기에 많은 언어에서 표준 정렬 알고리즘으로 사용하고 있다.
 
-## 참고자료
+## 7. 정렬 문제의 하한
+
+합병 정렬, 퀵 정렬, 버블 정렬, 선택 정렬, 삽입 정렬, 쉘 정렬, 힙 정렬 등의 공통점은 두 값을 비교하는 것에 기반하는 비교 정렬(Comparison sort)이라는 점이다.
+비교 정렬에 한해서 문제를 풀기 위해 필요한 최소 비교 횟수는 어떻게 계산할 수 있는가.
+이를 구하기 위해 시간복잡도의 하한(어떤 알고리즘도 하한보다 빠르게 해를 구할 수 없음을 의미)을 이용하여 계산할 수 있다.
+
+### 7.1 n개의 숫자가 저장된 배열에서 최댓값을 찾는 문제의 하한
+
+- 어떤 방법이더라도 각 숫자를 한 번씩은 비교해야 하기 때문에 적어도 $n - 1$ 번의 비교가 필요하다.
+
+### 7.2 n개의 숫자를 비교 정렬하는데 필요한 최소 비교 횟수, 즉 정렬 문제의 하한
+
+예를 들어 서로 다른 숫자 $x, y, z$ 에 대하여 정렬에 필요한 모든 경우의 비교는 아래와 같다.
+
+![decision tree](img/decision_tree.png)
+
+각 leaf 노드 결과에 따라 정렬되어 결과가 저장된다.
+위 같은 트리를 **결정 트리(decision tree)** 라고 하는데 아래와 같은 특징을 갖는다.
+
+- leaf 노드의 개수는 $n!$ 개이다.
+- 결정 트리는 이진 트리다.
+- 결정 트리의 높이(비교 횟수)는 $log n!$ 보다 작을 순 없다.
+- 결정 트리에는 정렬할 때 불필요한 내부 노드가 없다.
+
+이때 [스털링 근사](https://en.wikipedia.org/wiki/Stirling%27s_approximation)에 의해 매우 큰 n에 대해서 $\ln n! = n \ln n - n + O(\ln n)$
+이 성립한다.
+따라서 어떤 비교 정렬도 $n \ln n - n + O(\ln n)$ 보다 적은 비교 횟수로 정렬할 수 없다.
+그리고 이를 시간 복잡도로 나타내면 $O(n \log n)$ 이 된다.
+
+## Reference
 
 - [나무위키, 정렬 알고리즘](https://namu.wiki/w/%EC%A0%95%EB%A0%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
 - [geeks for geeks, TimSort](https://www.geeksforgeeks.org/timsort/)
 - [Naver D2, Tim sort에 대해 알아보자](https://d2.naver.com/helloworld/0315536)
+- [wikipedia, Stirling's approximation](https://en.wikipedia.org/wiki/Stirling%27s_approximation)
+- [nroo tistory, [Algorithm] 3-6. 정렬의 하한(lower bound)](https://ict-nroo.tistory.com/57)
