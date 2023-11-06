@@ -410,3 +410,4 @@ Tim sort는 병합 정렬을 기반으로 하되, 좀 더 효율적으로 run으
 - [Naver D2, Tim sort에 대해 알아보자](https://d2.naver.com/helloworld/0315536)
 - [wikipedia, Stirling's approximation](https://en.wikipedia.org/wiki/Stirling%27s_approximation)
 - [nroo tistory, [Algorithm] 3-6. 정렬의 하한(lower bound)](https://ict-nroo.tistory.com/57)
+- [팔만코딩경, cpp09 - mergeInsertionSort(ford-johnson algorithm)](https://80000coding.oopy.io/6880ebc0-acb3-4225-809f-37fc419adf71)
